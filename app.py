@@ -117,4 +117,4 @@ def update_update_cols(column, data):
     return [{'name': i, 'id': i} for i in df.columns], df.to_dict('records')
     
 if __name__ == "__main__":
-    app.run_server(debug=True) 
+    app.run_server(debug=False) 

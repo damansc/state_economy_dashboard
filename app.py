@@ -43,7 +43,7 @@ app.layout = html.Div([
     dcc.Store(id='data-store'),
     
     html.Div([
-        html.H3('State Economy Quickview')
+        html.H3('State Economy Quickview'),
     ]),
     
     html.Div([
@@ -54,7 +54,7 @@ app.layout = html.Div([
                            ],
                            value='GDP',
                            labelStyle={'display': 'inline-block'}),
-        ])
+        ], className='twelve columns')
     ]),
     
     html.Div([
@@ -64,7 +64,10 @@ app.layout = html.Div([
                    style={'fontSize': 9}),
             dcc.Graph(id='map',
                       style={'margin-top': 0}),
-            html.P(id='description')
+            html.P(id='description'),
+            html.Br(),
+            html.A("Code Repository", href='https://github.com/damansc/state_economy_dashboard', target="_blank", style={'margin-right': 12}),
+            html.A("LinkedIn", href='https://www.linkedin.com/in/damancox/', target="_blank"),
         ], className='seven columns'),
         html.Div([
             dash_table.DataTable(id='data-table',
@@ -74,8 +77,8 @@ app.layout = html.Div([
                                  virtualization=True,
                                  fixed_rows={ 'headers': True, 'data': 0 },
                                  )
-        ], className='four columns')
-    ])
+        ], className='four columns'),
+    ]),
     
 ])
 
@@ -117,4 +120,4 @@ def update_update_cols(column, data):
     return [{'name': i, 'id': i} for i in df.columns], df.to_dict('records')
     
 if __name__ == "__main__":
-    app.run_server(debug=False) 
+    app.run_server(debug=True) 

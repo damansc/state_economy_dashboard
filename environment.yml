@@ -1,0 +1,15 @@
+
+name: state_economy_dash #Environment name
+dependencies:
+  - python=3.6
+  - pip:
+    - dash
+    - dash-renderer
+    - dash-core-components
+    - dash-html-components
+    - dash_table
+    - plotly
+    - pandas
+    - numpy
+    - scikit-learn
+    - gunicorn # for app deployment
